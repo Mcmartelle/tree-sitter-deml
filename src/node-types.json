@@ -1,0 +1,120 @@
+[
+  {
+    "type": "after_name",
+    "named": true,
+    "fields": {}
+  },
+  {
+    "type": "after_nodes",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "after",
+          "named": true
+        },
+        {
+          "type": "after_name",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "before_name",
+    "named": true,
+    "fields": {}
+  },
+  {
+    "type": "before_nodes",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "before",
+          "named": true
+        },
+        {
+          "type": "before_name",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "command",
+    "named": true,
+    "fields": {}
+  },
+  {
+    "type": "dag",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "after_nodes",
+          "named": true
+        },
+        {
+          "type": "before_nodes",
+          "named": true
+        },
+        {
+          "type": "command",
+          "named": true
+        },
+        {
+          "type": "node_name",
+          "named": true
+        },
+        {
+          "type": "shelf",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "node_name",
+    "named": true,
+    "fields": {}
+  },
+  {
+    "type": "shelf",
+    "named": true,
+    "fields": {}
+  },
+  {
+    "type": "----",
+    "named": false
+  },
+  {
+    "type": "=",
+    "named": false
+  },
+  {
+    "type": "after",
+    "named": true
+  },
+  {
+    "type": "before",
+    "named": true
+  },
+  {
+    "type": "comment",
+    "named": true
+  },
+  {
+    "type": "|",
+    "named": false
+  }
+]
