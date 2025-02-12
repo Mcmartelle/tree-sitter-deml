@@ -1,0 +1,13 @@
+H > E | G = echo h
+----
+G = node ./tests/config/test.js
+E = echo e
+----
+F < G = python3 ./tests/config/test.py
+C < E | G = echo c
+----
+B < C | F | G = echo b
+D < C | E = echo d
+----
+A < B | C = echo a
+
