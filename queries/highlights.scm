@@ -1,18 +1,16 @@
 [
-(node_name) 
-(before_name) 
-(after_name) 
-] @variable
-
-[
-"<"
-">"
-"="
+  (before)
+  (after)
+  (assignment)
 ] @operator
 
 [
-"|"  
-"----" 
-] @punctuation.delimiter
+  (shelf)
+  (concatenator)
+] @punctuation.separator
+
+(node_name) @function
+
+(command) @string.special
 
 (comment) @comment
