@@ -7,7 +7,7 @@ module.exports = grammar({
   name: 'deml',
   extras: $ => [$.comment, ' '],
   rules: {
-    source_file: $ => seq(repeat1($._node), repeat(seq( $.shelf, repeat1($._node))), optional(newline)),
+    source_file: $ => repeat(choice($._node, $.shelf, $.comment, newline)),
     shelf: $ => seq('----', newline),
     _name: $ => token(seq( ascii_alpha, repeat(choice(ascii_alpha, ascii_digit, '_')))),
     node_name: $ => $._name,
@@ -19,13 +19,6 @@ module.exports = grammar({
     after: $ => '>',
     before_nodes: $ => seq($.before, $.before_name, repeat(seq('|', $.before_name))),
     after_nodes: $ => seq($.after, $.after_name, repeat(seq('|', $.after_name))),
-    comment: _ => token(choice(
-      seq('//', /[^\r\n\u2028\u2029]*/),
-      seq(
-        '/*',
-        /[^*]*\*+([^/*][^*]*\*+)*/,
-        '/',
-      ),
-    )),
+    comment: _ => token(seq('//', repeat1(char))),
   }
 });
