@@ -113,8 +113,8 @@
               "type": "SEQ",
               "members": [
                 {
-                  "type": "STRING",
-                  "value": "="
+                  "type": "SYMBOL",
+                  "name": "assignment"
                 },
                 {
                   "type": "SYMBOL",
@@ -151,6 +151,10 @@
       "type": "STRING",
       "value": ">"
     },
+    "assignment": {
+      "type": "STRING",
+      "value": "="
+    },
     "before_nodes": {
       "type": "SEQ",
       "members": [
@@ -168,8 +172,8 @@
             "type": "SEQ",
             "members": [
               {
-                "type": "STRING",
-                "value": "|"
+                "type": "SYMBOL",
+                "name": "concatenator"
               },
               {
                 "type": "SYMBOL",
@@ -197,8 +201,8 @@
             "type": "SEQ",
             "members": [
               {
-                "type": "STRING",
-                "value": "|"
+                "type": "SYMBOL",
+                "name": "concatenator"
               },
               {
                 "type": "SYMBOL",
@@ -208,6 +212,10 @@
           }
         }
       ]
+    },
+    "concatenator": {
+      "type": "STRING",
+      "value": "|"
     },
     "comment": {
       "type": "TOKEN",

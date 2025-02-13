@@ -13,12 +13,14 @@ module.exports = grammar({
     node_name: $ => $._name,
     before_name: $ => $._name,
     after_name: $ => $._name,
-    _node: $ => seq($.node_name, repeat(choice($.before_nodes, $.after_nodes)), optional(seq('=', $.command)), newline),
+    _node: $ => seq($.node_name, repeat(choice($.before_nodes, $.after_nodes)), optional(seq($.assignment, $.command)), newline),
     command: $ => token.immediate(repeat1(char)),
     before: $ => '<',
     after: $ => '>',
-    before_nodes: $ => seq($.before, $.before_name, repeat(seq('|', $.before_name))),
-    after_nodes: $ => seq($.after, $.after_name, repeat(seq('|', $.after_name))),
+    assignment: $ => '=',
+    before_nodes: $ => seq($.before, $.before_name, repeat(seq($.concatenator, $.before_name))),
+    after_nodes: $ => seq($.after, $.after_name, repeat(seq($.concatenator, $.after_name))),
+    concatenator: $ => '|',
     comment: _ => token(seq('//', repeat1(char))),
   }
 });

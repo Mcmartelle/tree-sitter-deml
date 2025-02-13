@@ -19,6 +19,10 @@
         {
           "type": "after_name",
           "named": true
+        },
+        {
+          "type": "concatenator",
+          "named": true
         }
       ]
     }
@@ -42,6 +46,10 @@
         },
         {
           "type": "before_name",
+          "named": true
+        },
+        {
+          "type": "concatenator",
           "named": true
         }
       ]
@@ -68,6 +76,10 @@
       "types": [
         {
           "type": "after_nodes",
+          "named": true
+        },
+        {
+          "type": "assignment",
           "named": true
         },
         {
@@ -98,11 +110,11 @@
     "named": false
   },
   {
-    "type": "=",
-    "named": false
+    "type": "after",
+    "named": true
   },
   {
-    "type": "after",
+    "type": "assignment",
     "named": true
   },
   {
@@ -119,7 +131,7 @@
     "extra": true
   },
   {
-    "type": "|",
-    "named": false
+    "type": "concatenator",
+    "named": true
   }
 ]
